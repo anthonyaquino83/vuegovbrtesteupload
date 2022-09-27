@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
 const title = ref("Web Components GOVBR-DS -  Quickstart Vue");
-const subtitle = ref("Baseado na v1.3.0 do @govbr-ds/webcomponents");
+const subtitle = ref("Baseado na v1.3.1 do @govbr-ds/webcomponents");
 
 const image = ref({
   src: "assets/govbr-logo.png",

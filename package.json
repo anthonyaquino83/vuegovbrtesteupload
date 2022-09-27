@@ -18,34 +18,33 @@
     "Dataprev (https://portal3.dataprev.gov.br/)"
   ],
   "scripts": {
-    "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
     "commit": "git-cz",
-    "prepare": "husky install"
-  },
-  "dependencies": {
-    "@govbr-ds/webcomponents": "^1.3.1",
-    "vue": "^3.2.39"
+    "dev": "vite",
+    "prepare": "husky install",
+    "preview": "vite preview"
   },
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
     }
   },
+  "dependencies": {
+    "@govbr-ds/webcomponents": "^1.3.1",
+    "vue": "^3.2.39"
+  },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.1.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.3",
-    "vue-tsc": "^0.40.13",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/cz-commitlint": "^17.1.2",
-    "@govbr-ds/commit-config": "^1.0.0",
+    "@govbr-ds/commit-config": "^1.0.1",
     "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/gitlab": "^9.4.2",
+    "@vitejs/plugin-vue": "^3.1.0",
     "husky": "^8.0.1",
-    "semantic-release": "^19.0.5"
+    "semantic-release": "^19.0.5",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.3",
+    "vue-tsc": "^0.40.13"
   }
 }
