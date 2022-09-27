@@ -1,0 +1,234 @@
+include:
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
+  - template: Security/License-Scanning.gitlab-ci.yml
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+
+image: node:16-alpine
+
+stages:
+  # Inicia o processo para gerar uma build, testar, publicar no gitpages e gerar release com o semantic-release
+  # Em branches que geram releases precisa de autorização para iniciar todo o pipeline
+  - Iniciar release
+  # Instala as dependências
+  - Dependências
+  # Gera um build do projeto para garantir que o arquivo final está sendo gerado
+  - Build
+  # Roda as validações configuradas no gitlab (SAST, secret detection, etc...)
+  # Para ver as configurações: Project > Security & Compliance > Policies
+  - Validações Gitlab
+  # Roda os testes e lints definidos pelo time
+  - Qualidade
+  # Build do storybook e publica no gitpages
+  - Storybook
+  # Executa o semantic-release conforme o .releaserc.yml
+  - Release
+
+cache:
+  paths:
+    - node_modules/
+
+variables:
+  SAST_EXCLUDED_PATHS: spec, test, tests, tmp, .husky, .storybook, .vscode, coverage, dist, node_modules, package-lock.json, *.spec.js, **/*.spec.js.snap
+  SECRET_DETECTION_HISTORIC_SCAN: 'false'
+  SECRET_DETECTION_EXCLUDED_PATHS: spec, test, tests, tmp, .husky, .vscode, coverage, dist, node_modules
+  SECURE_LOG_LEVEL: error
+
+Iniciar:
+  stage: Iniciar release
+  environment:
+    name: production
+  when: manual
+  allow_failure: false
+  script:
+    - echo 'Iniciando pipeline.'
+  only:
+    - main
+    - next
+    - next-major
+    - /^[0-9]+(\.([0-9]|x))+$/
+    - /^[0-9]+(\.([0-9]|x))+(-(rc|beta|alpha))?$/
+
+Instalar dependências:
+  stage: Dependências
+  allow_failure: false
+  artifacts:
+    paths:
+      - node_modules
+    expire_in: 1 day
+  script:
+    - apk --no-cache add git
+    - npm install
+  only:
+    - main
+    - next
+    - next-major
+    - merge_requests
+    - /^[0-9]+(\.([0-9]|x))+$/
+    - /^[0-9]+(\.([0-9]|x))+(-(rc|beta|alpha))?$/
+
+Web Components:
+  stage: Build
+  allow_failure: false
+  needs: ['Instalar dependências']
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 week
+  script:
+    - npm run build
+  only:
+    - main
+    - next
+    - next-major
+    - merge_requests
+    - /^[0-9]+(\.([0-9]|x))+$/
+    - /^[0-9]+(\.([0-9]|x))+(-(rc|beta|alpha))?$/
+
+dependency_scanning:
+  stage: Validações Gitlab
+  needs: ['Web Components']
+  allow_failure: false
+  script:
+    - echo 'Security/Dependency-Scanning.gitlab-ci.yml'
+
+license_scanning:
+  stage: Validações Gitlab
+  needs: ['Web Components']
+  allow_failure: false
+  script:
+    - echo 'Security/License-Scanning.gitlab-ci.yml'
+
+sast:
+  stage: Validações Gitlab
+  needs: ['Web Components']
+  allow_failure: false
+  script:
+    - echo 'Security/SAST.gitlab-ci.yml'
+
+secret_detection:
+  stage: Validações Gitlab
+  needs: ['Web Components']
+  allow_failure: false
+  script:
+    - echo 'Security/Secret-Detection.gitlab-ci.yml'
+
+Jest:
+  stage: Qualidade
+  needs: ['Web Components']
+  allow_failure: false
+  artifacts:
+    when: always
+    paths:
+      - coverage/
+    reports:
+      junit:
+        - junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+    expire_in: 1 week
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  script:
+    - npm run test:unit
+  only:
+    - main
+    - next
+    - next-major
+    - merge_requests
+    - /^[0-9]+(\.([0-9]|x))+$/
+    - /^[0-9]+(\.([0-9]|x))+(-(rc|beta|alpha))?$/
+
+JS:
+  stage: Qualidade
+  needs: ['Web Components']
+  allow_failure: false
+  artifacts:
+    when: always
+    paths:
+      - report-eslint.html
+    expire_in: 1 week
+  script:
+    - npx vue-cli-service lint --format html --output-file report-eslint.html
+  only:
+    - main
+    - next
+    - next-major
+    - merge_requests
+    - /^[0-9]+(\.([0-9]|x))+$/
+    - /^[0-9]+(\.([0-9]|x))+(-(rc|beta|alpha))?$/
+
+CSS:
+  stage: Qualidade
+  needs: ['Web Components']
+  allow_failure: false
+  artifacts:
+    when: always
+    paths:
+      - report-stylelint.txt
+    expire_in: 1 week
+  script:
+    - npx stylelint 'src/**/*.css' --aei --formatter verbose --output-file report-stylelint.txt
+  only:
+    - main
+    - next
+    - next-major
+    - merge_requests
+    - /^[0-9]+(\.([0-9]|x))+$/
+    - /^[0-9]+(\.([0-9]|x))+(-(rc|beta|alpha))?$/
+
+Commits:
+  stage: Qualidade
+  needs: ['Web Components']
+  allow_failure: false
+  artifacts:
+    when: always
+    paths:
+      - report-commitlint.txt
+    expire_in: 1 week
+  before_script:
+    - apk --no-cache add git
+  script:
+    - npx commitlint-gitlab-ci -x @commitlint/config-conventional > report-commitlint.txt
+  only:
+    - main
+    - next
+    - next-major
+    - merge_requests
+    - /^[0-9]+(\.([0-9]|x))+$/
+    - /^[0-9]+(\.([0-9]|x))+(-(rc|beta|alpha))?$/
+
+pages:
+  stage: Storybook
+  environment:
+    name: production
+  allow_failure: false
+  artifacts:
+    paths:
+      - public
+  before_script:
+    - npm install @storybook/vue3
+  script:
+    - rm -rf public
+    - npm run build:storybook
+  only:
+    - main
+
+Semantic Release:
+  stage: Release
+  environment:
+    name: production
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 week
+  before_script:
+    - apk --no-cache add git zip
+  script:
+    - npx semantic-release
+  only:
+    - main
+    - next
+    - next-major
+    - /^[0-9]+(\.([0-9]|x))+$/
+    - /^[0-9]+(\.([0-9]|x))+(-(rc|beta|alpha))?$/

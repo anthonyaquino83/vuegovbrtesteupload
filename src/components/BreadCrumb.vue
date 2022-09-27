@@ -1,0 +1,37 @@
+<template>
+  <br-breadcrumb
+    label="Breadcrumb"
+    links="[
+    {
+      label: 'Página Inicial',
+      url: '/',
+      target: '_blank',
+      home: true
+    },
+    {
+      label: 'Tela Anterior 01',
+      target: '_blank',
+      url: 'javascript:void(0)'
+    },
+    {
+      label: 'Tela Anterior 02',
+      target: '_blank',
+      url: 'javascript:void(0)'
+    },
+    {
+      label: 'Tela Anterior 03',
+      target: '_blank',
+      url: 'javascript:void(0)'
+    },
+    {
+      label: 'Tela Anterior 04',
+      target: '_blank',
+      url: 'javascript:void(0)'
+    },
+    {
+      label: 'Página Atual',
+      active: true
+    }
+  ]"
+  ></br-breadcrumb>
+</template>
