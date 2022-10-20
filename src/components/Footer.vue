@@ -1,24 +1,46 @@
+<template>
+  <br-footer ref="footer" ></br-footer>
+</template>
+
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import discordSvg from "../assets/discord.svg";
 
-const license = ref(
-  "Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal"
-);
+interface Social {
+  label: string;
+  network: [{
+    href: string;
+    image: string;
+    description: string;
+    target: string;
+  }];
+}
 
-const social = ref({
-  label: "Redes Sociais",
-  networks: [
+const footer = ref(null);
+let license: string;
+let social: Social;
+
+license = "Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
+
+social = {
+  label: "Redes sociais",
+  network: [
     {
-      href: "https://discord.gg/U5GwPfqhUP",
-      image: "/discord.svg",
+      href: "https://discord.gg/4YQZ8Y",
+      image: discordSvg,
       description: "Discord",
       target: "_blank",
     },
   ],
-});
-</script>
+};
+console.log(social);
 
-<template>
-  <!-- FIXME: Social não funciona? -->
-  <br-footer :text="license" :social="social"></br-footer>
-</template>
+onMounted(() => {
+  console.log(footer);
+  const footerInstance = footer?.value?._instance;
+  const props = footerInstance.props;
+  props.text = license;
+  props.social = social;
+});
+
+</script>
