@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import govLogo from "../assets/govbr-logo.png";
 
 const title = ref("Web Components GOVBR-DS -  Quickstart Vue");
 const subtitle = ref("Baseado na v1.3.1 do @govbr-ds/webcomponents");
 
 const image = ref({
-  src: "assets/govbr-logo.png",
+  src: govLogo,
   alt: "logo",
 });
 
@@ -38,6 +39,7 @@ const links = ref([
     :title="title"
     :subtitle="subtitle"
     has-menu
+    image-size="medium"
   >
     <template v-slot:headerMenu>
       <br-button

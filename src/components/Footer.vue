@@ -6,41 +6,25 @@
 import { onMounted, ref } from "vue";
 import discordSvg from "../assets/discord.svg";
 
-interface Social {
-  label: string;
-  network: [{
-    href: string;
-    image: string;
-    description: string;
-    target: string;
-  }];
-}
-
 const footer = ref(null);
-let license: string;
-let social: Social;
-
-license = "Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
-console.log(license);
-social = {
-  label: "Redes sociais",
-  network: [
+const license ="Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
+const social = ref({
+  label: "Redes Sociais",
+  networks: [
     {
-      href: "https://discord.gg/4YQZ8Y",
+      href: "https://discord.gg/U5GwPfqhUP",
       image: discordSvg,
       description: "Discord",
       target: "_blank",
     },
   ],
-};
-console.log(social);
+});
 
 onMounted(() => {
-  console.log(footer);
   const footerInstance = footer?.value?._instance;
   const props = footerInstance.props;
   props.text = license;
-  props.social = social;
+  props.social = social.value;
 });
 
 </script>

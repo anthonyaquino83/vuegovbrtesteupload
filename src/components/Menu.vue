@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 const id = ref("main-navigation");
 
-const menuItems = ref([
+const menuItems = ref(JSON.stringify([
   {
     id: 1,
     icon: "bell",
@@ -52,7 +52,7 @@ const menuItems = ref([
     icon: "file-archive",
     name: "Nível 1",
   },
-]);
+]));
 </script>
 
 <template>
