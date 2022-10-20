@@ -21,7 +21,7 @@ let license: string;
 let social: Social;
 
 license = "Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
-
+console.log(license);
 social = {
   label: "Redes sociais",
   network: [
