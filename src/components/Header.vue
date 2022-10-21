@@ -10,7 +10,7 @@ const image = ref({
   alt: "logo",
 });
 
-const links = ref([
+const links = ref(JSON.stringify([
   {
     name: "GOVBR-DS",
     href: "https://gov.br/ds",
@@ -29,7 +29,7 @@ const links = ref([
     title: "Dataprev",
     target: "_blank",
   },
-]);
+]));
 </script>
 
 <template>
@@ -40,23 +40,12 @@ const links = ref([
     :subtitle="subtitle"
     has-menu
     image-size="medium"
+    data-toggle="menu"
+      data-target="#main-navigation"
   >
-    <template v-slot:headerMenu>
-      <br-button
-        role="option"
-        circle
-        density="small"
-        aria-label="Menu"
-        icon="bars"
-        data-toggle="menu"
-        data-target="#main-navigation"
-      ></br-button>
-    </template>
-    <template v-slot:headerAction>
-      <br-header-action
-        title-links="Acesso Rápido"
-        :listLinks="links"
-      ></br-header-action>
-    </template>
-  </br-header>
+  <br-header-action
+    slot="headerAction"
+    :list-links="links"
+  ></br-header-action>
+</br-header>
 </template>

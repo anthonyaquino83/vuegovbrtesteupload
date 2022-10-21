@@ -1,9 +1,14 @@
+<template>
+  <br-menu ref="menu" show-menu></br-menu>
+</template>
+
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
-const id = ref("main-navigation");
+const menu = ref(null);
+const id = "main-navigation";
 
-const menuItems = ref(JSON.stringify([
+const menuItems = ref([
   {
     id: 1,
     icon: "bell",
@@ -52,15 +57,13 @@ const menuItems = ref(JSON.stringify([
     icon: "file-archive",
     name: "Nível 1",
   },
-]));
-</script>
+]);
 
-<template>
-  <br-menu
-    :id="id"
-    is-push
-    show-menu
-    :list="menuItems"
-    data-breakpoints="col-sm-4 col-lg-2"
-  ></br-menu>
-</template>
+onMounted(() => {
+  menu.value.id = id;
+  menu.value.isPush = true;
+  menu.value.list = menuItems.value;
+  menu.value.dataBreakpoints = "col-sm-4 col-lg-2";
+});
+
+</script>
