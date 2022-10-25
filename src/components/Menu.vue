@@ -3,9 +3,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, Ref } from "vue";
 
-const menu = ref(null);
+const menu: Ref<any> = ref(null);
 const id = "main-navigation";
 
 const menuItems = ref([
@@ -60,6 +60,7 @@ const menuItems = ref([
 ]);
 
 onMounted(() => {
+
   menu.value.id = id;
   menu.value.isPush = true;
   menu.value.list = menuItems.value;

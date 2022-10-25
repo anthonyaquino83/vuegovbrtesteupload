@@ -3,10 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, Ref } from "vue";
 import discordSvg from "../assets/discord.svg";
 
-const footer = ref(null);
+const footer: Ref<any> = ref(null);
 const license ="Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
 const social = {
   label: "Redes Sociais",
