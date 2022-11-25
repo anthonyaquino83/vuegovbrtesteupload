@@ -3,12 +3,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, Ref } from "vue";
 import discordSvg from "../assets/discord.svg";
 
-const footer = ref(null);
+const footer: Ref<any> = ref(null);
 const license ="Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
-const social = ref({
+const social = {
   label: "Redes Sociais",
   networks: [
     {
@@ -18,13 +18,11 @@ const social = ref({
       target: "_blank",
     },
   ],
-});
+};
 
 onMounted(() => {
-  const footerInstance = footer?.value?._instance;
-  const props = footerInstance.props;
-  props.text = license;
-  props.social = social.value;
+  footer.value.social = social;
+  footer.value.text = license;
 });
 
 </script>
