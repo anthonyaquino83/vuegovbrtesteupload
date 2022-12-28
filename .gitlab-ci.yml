@@ -68,6 +68,7 @@ Commits:
     expose_as: "Commitlint"
   before_script:
     - apk --no-cache add git
+    - npm install @govbr-ds/commit-config
   script:
     - >
       if [ "${CI__BEFORE_SHA}" = "0000000000000000000000000000000000000000" ]; then
