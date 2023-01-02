@@ -18,7 +18,7 @@
     "Dataprev (https://portal3.dataprev.gov.br/)"
   ],
   "scripts": {
-    "build": "vue-tsc --noEmit && vite build --outDir public",
+    "build": "vue-tsc --noEmit && vite build --outDir public --base=/dev/wbc/govbr-ds-wbc-quickstart-vue/",
     "commit": "git-cz",
     "dev": "vite",
     "prepare": "husky install",
