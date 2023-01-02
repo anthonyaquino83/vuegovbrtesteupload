@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [1.0.1](https://gitlab.com/govbr-ds/dev/wbc/govbr-ds-wbc-quickstart-vue/compare/v1.0.0...v1.0.1) (02/01/2023)
+
+
+### :bug: Correções
+
+* corrige o endereço de build para o gitpages ([8e04eab](https://gitlab.com/govbr-ds/dev/wbc/govbr-ds-wbc-quickstart-vue/commit/8e04eabec2addff94ee71b5463d69fd8f2b41a58))
+* texto sobre versão do wbc usada ([ca19045](https://gitlab.com/govbr-ds/dev/wbc/govbr-ds-wbc-quickstart-vue/commit/ca19045f7531196ec72ddd7e6c7640521c1a8671))
+
 ## 1.0.0 (28/12/2022)
 
 
