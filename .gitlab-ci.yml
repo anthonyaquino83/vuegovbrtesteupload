@@ -11,7 +11,6 @@ stages:
   - performance
   - accessibility
   - Qualidade
-  - Iniciar release
   - Dependências
   - Pages
   - Release
@@ -83,27 +82,10 @@ Commits:
           npx commitlint -x @govbr-ds/commit-config -f "${CI_BUILD_BEFORE_SHA}" > report-commitlint.txt
         fi
       fi
-  only:
-    - main
-    - next
-    - merge_requests
-    - /\d.(\d|x).(\d|x)(-alpha)?$/
-    - /alpha$/
-
-Iniciar release:
-  stage: Iniciar release
-  environment:
-    name: production
-  when: manual
-  allow_failure: false
-  script:
-    - echo 'Iniciando pipeline.'
-  only:
-    - main
 
 Instalar dependências:
   stage: Dependências
-  allow_failure: false
+  when: manual
   artifacts:
     paths:
       - node_modules
@@ -113,12 +95,14 @@ Instalar dependências:
     - npm install --legacy-peer-deps
   only:
     - main
+    - next
+    - /\d.(\d|x).(\d|x)(-alpha)?$/
+    - /alpha$/
 
 pages:
   stage: Pages
   environment:
     name: production
-  allow_failure: false
   artifacts:
     paths:
       - public
