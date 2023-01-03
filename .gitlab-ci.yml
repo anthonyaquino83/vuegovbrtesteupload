@@ -73,6 +73,8 @@ Commits:
 
 Instalar dependências:
   stage: Dependências
+  environment:
+    name: production
   when: manual
   artifacts:
     paths:
@@ -91,6 +93,7 @@ pages:
   stage: Pages
   environment:
     name: production
+  needs: ["Instalar dependências"]
   artifacts:
     paths:
       - public
@@ -104,6 +107,7 @@ Semantic Release:
   stage: Release
   environment:
     name: production
+  needs: ["Instalar dependências"]
   artifacts:
     paths:
       - dist
