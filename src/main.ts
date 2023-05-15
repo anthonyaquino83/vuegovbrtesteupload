@@ -1,5 +1,14 @@
+import "@govbr-ds/webcomponents";
 import { createApp } from "vue";
-import "../node_modules/@govbr-ds/webcomponents/dist/webcomponents.umd.min.js";
 import App from "./App.vue";
+import router from "./routes.js";
 
-createApp(App).mount("#app");
+import bindUnidirecional from "./directives/bind-unidirecional";
+
+const app = createApp(App);
+
+// Diretiva global para permitir bind unidirecional com os web components
+app.directive("model-form", bindUnidirecional);
+
+app.use(router);
+app.mount("#app");

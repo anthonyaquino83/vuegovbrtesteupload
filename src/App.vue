@@ -1,55 +1,28 @@
 <script setup lang="ts">
-import BreadCrumb from "./components/BreadCrumb.vue";
-import Footer from "./components/Footer.vue";
-import Header from "./components/Header.vue";
-import Menu from "./components/Menu.vue";
+import Footer from "@/components/Footer.vue";
+import Header from "@/components/Header.vue";
+import Menu from "@/components/Menu.vue";
 </script>
 
 <template>
   <header>
     <Header></Header>
   </header>
-  <main class="d-flex flex-fill mb-5" id="main">
-    <div class="container-lg d-flex">
+  <main class="mb-5" id="main">
+    <div class="container-lg">
       <div class="row">
-        <menu class="col-sm-4 col-lg-2">
+        <menu class="col-sm-4 col-lg-3">
           <Menu></Menu>
         </menu>
         <div class="col mb-5">
-          <BreadCrumb></BreadCrumb>
           <div class="main-content pl-sm-3 mt-4" id="main-content">
-            <h1>Lorem ipsum</h1>
-            <br-message state="warning" title="Atenção." show-icon>
-              Esse projeto NÃO ESTÁ PRONTO PARA PRODUÇÃO! Sinta-se à vontade
-              para usá-lo como ponto de partida para seu projeto ou como exemplo
-              de uso, mas tenha em mente que configurações, melhorias e
-              correções precisarão ser feitos.
-              <hr />
-              Para mais informações acesse o
-              <a href="https://gov.br/ds" target="_blank"> nosso site </a>
-              .
-            </br-message>
-            <div>
-              <p>
-                Blanditiis, qui? Obcaecati consequuntur delectus pariatur beatae
-                assumenda autem reprehenderit adipisci voluptatum exercitationem
-                quod laborum, tempore corporis id officiis optio, animi
-                blanditiis labore aspernatur illum, molestiae natus ipsa? Quo,
-                sapiente.
-              </p>
-              <p>
-                Adipisci illo hic ratione dolores minus sit odio ipsum sequi
-                iste tenetur, cupiditate fuga asperiores sed temporibus corrupti
-                autem iusto architecto nemo veritatis eum. Aspernatur earum
-                voluptates alias explicabo ut?
-              </p>
-            </div>
+            <router-view></router-view>
           </div>
         </div>
       </div>
     </div>
   </main>
-  <footer>
+  <footer class="pt-7x">
     <Footer></Footer>
   </footer>
 </template>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import govLogo from "@/assets/govbr-logo.png";
 import { ref } from "vue";
-import govLogo from "../assets/govbr-logo.png";
 
 const title = ref("Web Components GOVBR-DS -  Quickstart Vue");
-const subtitle = ref("Baseado na v1.4.1 do @govbr-ds/webcomponents");
+const subtitle = ref("Baseado na v1.5.0 do @govbr-ds/webcomponents");
 
 const image = ref({
   src: govLogo,
@@ -42,9 +42,17 @@ const links = ref(
     :subtitle="subtitle"
     has-menu
     image-size="medium"
-    data-toggle="menu"
-    data-target="#main-navigation"
   >
+    <br-button
+      slot="headerMenu"
+      role="option"
+      circle
+      density="small"
+      aria-label="Menu"
+      icon="bars"
+      data-toggle="menu"
+      data-target="#main-navigation"
+    ></br-button>
     <br-header-action
       slot="headerAction"
       :list-links="links"

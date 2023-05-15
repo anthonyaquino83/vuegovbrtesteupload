@@ -1,13 +1,14 @@
 <template>
-  <br-footer ref="footer" ></br-footer>
+  <br-footer ref="footer"></br-footer>
 </template>
 
 <script setup lang="ts">
+import discordSvg from "@/assets/discord.svg";
 import { onMounted, ref, Ref } from "vue";
-import discordSvg from "../assets/discord.svg";
 
 const footer: Ref<any> = ref(null);
-const license ="Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
+const license =
+  "Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
 const social = {
   label: "Redes Sociais",
   networks: [
@@ -24,5 +25,4 @@ onMounted(() => {
   footer.value.social = social;
   footer.value.text = license;
 });
-
 </script>
