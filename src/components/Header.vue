@@ -3,7 +3,7 @@ import govLogo from "@/assets/govbr-logo.png";
 import { ref } from "vue";
 
 const title = ref("Web Components GOVBR-DS -  Quickstart Vue");
-const subtitle = ref("Baseado na v1.5.0 do @govbr-ds/webcomponents");
+const subtitle = ref("Baseado na v1.6.0 do @govbr-ds/webcomponents");
 
 const image = ref({
   src: govLogo,

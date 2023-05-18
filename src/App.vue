@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import Footer from "@/components/Footer.vue";
-import Header from "@/components/Header.vue";
-import Menu from "@/components/Menu.vue";
+import Cookiebar from "./components/Cookiebar.vue";
+import Footer from "./components/Footer.vue";
+import Header from "./components/Header.vue";
+import Menu from "./components/Menu.vue";
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import Menu from "@/components/Menu.vue";
       </div>
     </div>
   </main>
+  <Cookiebar />
   <footer class="pt-7x">
     <Footer></Footer>
   </footer>
