@@ -34,7 +34,7 @@ As principais dependências do projeto são:
 ## Como executar o projeto?
 
 ```sh
-git clone git@gitlab.com:govbr-ds/dev/wbc/govbr-ds-wbc-quickstart-vue.git
+git clone git@gitlab.com:govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue.git
 
 npm install
 

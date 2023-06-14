@@ -9,16 +9,16 @@
     "web components",
     "vue"
   ],
-  "homepage": "https://govbr-ds.gitlab.io/dev/wbc/govbr-ds-wbc-quickstart-vue",
-  "bugs": "https://gitlab.com/govbr-ds/dev/wbc/govbr-ds-wbc-quickstart-vue/-/issues",
-  "repository": "gitlab:govbr-ds/dev/wbc/govbr-ds-wbc-quickstart-vue.git",
+  "homepage": "https://govbr-ds.gitlab.io/wbc/quickstarts/govbr-ds-wbc-quickstart-vue",
+  "bugs": "https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/-/issues",
+  "repository": "gitlab:govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue.git",
   "license": "MIT",
   "author": "SERPRO <govbr-ds@serpro.gov.br> (http://serpro.gov.br/)",
   "contributors": [
     "Dataprev (https://portal3.dataprev.gov.br/)"
   ],
   "scripts": {
-    "build": "vue-tsc --noEmit && vite build --outDir public --base=/dev/wbc/govbr-ds-wbc-quickstart-vue/",
+    "build": "vue-tsc --noEmit && vite build --outDir public --base=/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/",
     "commit": "git-cz",
     "dev": "vite",
     "prepare": "husky install",
