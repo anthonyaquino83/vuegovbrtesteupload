@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## [1.1.0](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/compare/v1.0.1...v1.1.0) (14/06/2023)
+
+
+### 📚 Documentação
+
+* atualiza url da wiki ([0d3ae59](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/commit/0d3ae59e113e18fb3e7e78bcfbd5ea8498964867))
+
+
+### ✨ Novidades
+
+* adiciona validação para o formulário ([9cb6da5](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/commit/9cb6da5927daf449ab01737e2ef0ae0df16563e8))
+* implementa exemplo de uso do componente cookiebar ([5532898](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/commit/5532898da3e4121e7f975416b922f87b18fc2b45))
+
 ## [1.0.1](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/compare/v1.0.0...v1.0.1) (02/01/2023)
 
 ### :bug: Correções
