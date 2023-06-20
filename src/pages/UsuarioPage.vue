@@ -195,9 +195,9 @@
     </form>
   </div>
 </template>
-<script>
-import Message from "@/components/Message.vue";
+<script lang="ts">
 import BreadCrumb from "@/components/BreadCrumb.vue";
+import Message from "@/components/Message.vue";
 
 export default {
   name: "UsuarioPage",
@@ -259,7 +259,17 @@ export default {
         : "";
     },
     checkForm() {
-      this.erros = {};
+      this.erros = {
+        nome: "",
+        email: "",
+        telefone: "",
+        senha: "",
+        confirmarSenha: "",
+        cpf: "",
+        dataNascimento: "",
+        endereco: "",
+        cep: "",
+      };
 
       if (!this.nome) {
         this.erros.nome = "O campo Nome é obrigatório.";

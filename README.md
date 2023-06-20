@@ -1,8 +1,8 @@
-# Web Components GOVBR-DS - Quickstart Vue
+# Web Components GovBR-DS - Quickstart Vue
 
 ## Descrição
 
-Projeto exemplificando o uso da [biblioteca de Web Components do GOVBR-DS](https://gov.br/ds/webcomponents "Biblioteca de Web Components do GOVBR-DS") em projetos [Vue](https://vuejs.org/ "Vue").
+Projeto exemplificando o uso da [biblioteca de Web Components do GovBR-DS](https://gov.br/ds/webcomponents "Biblioteca de Web Components do GovBR-DS") em projetos [Vue](https://vuejs.org/ "Vue").
 
 Esse projeto usa Vue 3 `<script setup>` SFCs. Confira os [documentos de configuração do script](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) para aprender mais.
 
@@ -10,7 +10,7 @@ Esse projeto usa Vue 3 `<script setup>` SFCs. Confira os [documentos de configur
 
 Esse projeto é desenvolvido usando:
 
-1. [Biblioteca de Web Components do GOVBR-DS](https://gov.br/ds/webcomponents "Biblioteca de Web Components do GOVBR-DS")
+1. [Biblioteca de Web Components do GovBR-DS](https://gov.br/ds/webcomponents "Biblioteca de Web Components do GovBR-DS")
 1. [Vue 3](https://vuejs.org/ "Vue 3").
 1. [TypeScript](https://www.typescriptlang.org/ "TypeScript").
 1. [Vite](https://vitejs.dev/ "Vite").
@@ -21,15 +21,15 @@ Para saber mais detalhes sobre Web Components sugerimos que consulte o [MDN](htt
 
 As principais dependências do projeto são:
 
-1. [GOVBR-DS](https://www.gov.br/ds/ "GOVBR-DS")
+1. [GovBR-DS](https://www.gov.br/ds/ "GovBR-DS")
 
-1. [Web Components](https://gov.br/ds/webcomponents/ "Web Components GOVBR-DS")
+1. [Web Components](https://gov.br/ds/webcomponents/ "Web Components GovBR-DS")
 
 1. [Font Awesome](https://fontawesome.com/ "Font Awesome")
 
 1. [Fonte Rawline](https://www.cdnfonts.com/rawline.font/ "Fonte Rawline")
 
-> O fontawesome e a fonte rawline podem ser importadas de um CDN. Consulte a documentação no site do GOVBR-DS para mais detalhes
+> O fontawesome e a fonte rawline podem ser importadas de um CDN. Consulte a documentação no site do GovBR-DS para mais detalhes
 
 ## Como executar o projeto?
 
@@ -59,11 +59,11 @@ import "../node_modules/@govbr-ds/webcomponents/dist/webcomponents.umd.min.js";
 
 Use nossos canais abaixo para obter tirar suas dúvidas:
 
--   Site do GOVBR-DS [http://gov.br/ds](http://gov.br/ds)
+-   Site do GovBR-DS [http://gov.br/ds](http://gov.br/ds)
 
 -   Web Components [https://gov.br/ds/webcomponents/](https://gov.br/ds/webcomponents/)
 
--   Pelo nosso email [govbr-ds@serpro.gov.br](govbr-ds@serpro.gov.br)
+-   Pelo nosso email <govbr-ds@serpro.gov.br>
 
 -   Usando nosso canal no discord [https://discord.gg/U5GwPfqhUP](https://discord.gg/U5GwPfqhUP)
 
@@ -81,7 +81,7 @@ Nesse projeto usamos um padrão para branches e commits. Por favor observe a doc
 
 ## Créditos
 
-Os Web Components do GOVBR-DS são criados pelo [SERPRO](https://www.serpro.gov.br/ "SERPRO | Serviço Federal de Processamento de Dados") e [Dataprev](https://www.dataprev.gov.br/ "Dataprev | Empresa de Tecnologia e Informações da Previdência") juntamente com a participação da comunidade.
+Os Web Components do GovBR-DS são criados pelo [SERPRO](https://www.serpro.gov.br/ "SERPRO | Serviço Federal de Processamento de Dados") e [Dataprev](https://www.dataprev.gov.br/ "Dataprev | Empresa de Tecnologia e Informações da Previdência") juntamente com a participação da comunidade.
 
 ## Licença
 

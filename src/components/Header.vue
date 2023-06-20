@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import govLogo from "@/assets/govbr-logo.png";
+import govVue from "@/assets/logo-vue.png";
 import { ref } from "vue";
 
-const title = ref("Web Components GOVBR-DS -  Quickstart Vue");
-const subtitle = ref("Baseado na v1.6.0 do @govbr-ds/webcomponents");
+const title = ref("Web Components GovBR-DS -  Quickstart Vue");
+const subtitle = ref("Baseado na v1.6.1 do @govbr-ds/webcomponents");
 
 const image = ref({
-  src: govLogo,
+  src: govVue,
   alt: "logo",
 });
 

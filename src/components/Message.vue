@@ -4,7 +4,7 @@
   </br-message>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "Message",
   props: {
@@ -23,5 +23,3 @@ export default {
   },
 };
 </script>
-
-<style lang=""></style>
