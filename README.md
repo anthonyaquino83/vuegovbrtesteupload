@@ -53,6 +53,97 @@ Inclua essas duas importações no arquivo _main.ts_.
 import "../node_modules/@govbr-ds/webcomponents/dist/webcomponents.umd.min.js";
 ```
 
+## Rotas com os web componentes e Frameworks
+
+O atributo isSpaLinkBehavior foi criado para adicionar suporte a um comportamento específico nos links do componente br-menu em aplicativos de página única (SPA). O objetivo principal é permitir que os links dentro do menu se comportem de forma diferente quando o aplicativo está em execução como SPA, em comparação com um comportamento tradicional de reload de página.
+
+Em aplicações SPA, onde as páginas são carregadas dinamicamente sem a necessidade de recarregar a página inteira, o comportamento padrão dos links é executar uma ação interna dentro da aplicação, navegando para a nova rota sem atualizar toda a página. No entanto, quando se trata de um link tradicional, ao clicar nele, a página é recarregada do zero, o que pode causar uma experiência mais lenta e indesejada para o usuário.
+
+Em resumo, o atributo isSpaLinkBehavior foi criado para o componente br-menu com o objetivo de oferecer suporte a aplicativos de página única (SPA). Quando definido como true para um item do menu, o link associado a esse item se comporta como um link interno do SPA, evitando o reload da página ao ser clicado. Isso proporciona uma navegação mais suave e eficiente para os usuários, melhorando a experiência geral do aplicativo. O atributo é particularmente útil em cenários com várias rotas no SPA, onde a necessidade de navegação interna é frequente. Recomenda-se usar o isSpaLinkBehavior sempre que houver links internos em um SPA, garantindo uma experiência de usuário mais agradável.
+
+Menu.vue:
+
+```javascript
+<template>
+  <nav>
+    <ul>
+      <li v-for="menuItem in menuItems" :key="menuItem.id">
+        <a
+          href="javascript:void(0)"
+          @click="handleClick(menuItem, $event)"
+        >
+          {{ menuItem.name }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<script>
+export default {
+  props: {
+    menuItems: {
+      type: Array,
+      default: () => []
+    }
+  },
+  methods: {
+    handleClick(menuItem, event) {
+      event.preventDefault();
+
+      if (menuItem.isSpaLinkBehavior && menuItem.url) {
+        this.$emit('navigate', menuItem.url);
+      } else if (menuItem.url) {
+        window.location.href = menuItem.url;
+      }
+    }
+  }
+};
+</script>
+```
+
+App.vue (exemplo de utilização):
+
+```javascript
+<template>
+  <div>
+    <h1>Exemplo de uso do Menu</h1>
+    <Menu :menu-items="menuItems" @navigate="onNavigate" />
+  </div>
+</template>
+
+<script>
+import Menu from './Menu.vue';
+
+export default {
+  components: {
+    Menu
+  },
+  data() {
+    return {
+      menuItems: [
+        { id: 1, name: 'Home', url: '/' },
+        { id: 2, name: 'Sobre', url: '/about' },
+        { id: 3, name: 'Serviços', url: '/services', isSpaLinkBehavior: true },
+        { id: 4, name: 'Contato', url: '/contact', isSpaLinkBehavior: true },
+        { id: 5, name: 'Link Externo', url: 'https://www.google.com', isSpaLinkBehavior: false },
+      ]
+    };
+  },
+  methods: {
+    onNavigate(url) {
+      console.log('Navegando para:', url);
+      // Lógica de navegação no SPA
+    }
+  }
+};
+</script>
+```
+
+Neste exemplo, temos um componente Vue chamado Menu.vue com uma propriedade chamada menuItems, que é uma lista de objetos que representam os itens do menu. Cada item do menu pode ter a propriedade isSpaLinkBehavior definida como true para indicar que o link deve ser tratado como um link interno do SPA. No método handleClick, verificamos se o isSpaLinkBehavior está definido para lidar com a navegação de acordo com a necessidade.
+
+Lembre-se de que este é apenas um exemplo básico de como implementar o uso do atributo isSpaLinkBehavior em um componente Vue. Em um projeto real, você pode estender e personalizar esse exemplo de acordo com as necessidades específicas do seu aplicativo.
+
 ## Precisa de ajuda?
 
 > Por favor **não** crie issues para fazer perguntas...

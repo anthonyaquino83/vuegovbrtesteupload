@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <BreadCrumb></BreadCrumb>
   <Message
     message="Formulário enviado com sucesso!"
@@ -330,4 +330,4 @@ export default {
   },
 };
 </script>
-<style lang=""></style>
+<style></style>
