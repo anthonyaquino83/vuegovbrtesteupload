@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <h1>Página Inicial</h1>
   <br-message state="warning" title="Atenção." show-icon>
     Esse projeto NÃO ESTÁ PRONTO PARA PRODUÇÃO! Sinta-se à vontade para usá-lo
@@ -6,8 +6,7 @@
     mente que configurações, melhorias e correções precisarão ser feitos.
     <hr />
     Para mais informações acesse o
-    <a href="https://gov.br/ds" target="_blank"> nosso site </a>
-    .
+    <a href="https://gov.br/ds" target="_blank"> nosso site</a>.
   </br-message>
   <div>
     <p>
@@ -33,4 +32,4 @@ export default {
   mounted() {},
 };
 </script>
-<style lang=""></style>
+<style></style>
