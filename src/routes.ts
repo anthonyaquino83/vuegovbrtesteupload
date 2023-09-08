@@ -1,30 +1,47 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomePage from "./pages/HomePage.vue";
-import InputPage from "./pages/InputPage.vue";
-import UsuarioPage from "./pages/UsuarioPage.vue";
+import { createRouter, createWebHistory } from 'vue-router'
+import Cookiebar from './pages/CookiebarPage.vue'
+import Formulario from './pages/Formulario.vue'
+import Home from './pages/Home.vue'
+import Signin from './pages/Signin.vue'
 
 const routes = [
   {
-    path: "/",
-    redirect: "/home",
+    path: '/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/',
+    component: Home,
+    name: 'Home',
+    meta: {
+      label: 'Página Inicial',
+    },
   },
   {
-    path: "/home",
-    component: HomePage,
+    path: '/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/formulario',
+    component: Formulario,
+    name: 'Formulário',
+    meta: {
+      label: 'Formulário',
+    },
   },
   {
-    path: "/usuario",
-    component: UsuarioPage,
+    path: '/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/sign-in',
+    component: Signin,
+    name: 'Sign-in',
+    meta: {
+      label: 'Sign-in',
+    },
   },
   {
-    path: "/input",
-    component: InputPage,
+    path: '/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/cookiebar',
+    component: Cookiebar,
+    name: 'Cookiebar',
+    meta: {
+      label: 'Cookiebar',
+    },
   },
-];
+]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
+})
 
-export default router;
+export default router

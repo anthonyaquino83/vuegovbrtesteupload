@@ -1,28 +1,11 @@
 <template>
-  <br-footer ref="footer"></br-footer>
+  <br-footer :text="license" :logo="JSON.stringify(logo)" id="footer" container-fluid="true"></br-footer>
 </template>
 
 <script setup lang="ts">
-import discordSvg from "@/assets/discord.svg";
-import { onMounted, ref, Ref } from "vue";
-
-const footer: Ref<any> = ref(null);
-const license =
-  "Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
-const social = {
-  label: "Redes Sociais",
-  networks: [
-    {
-      href: "https://discord.gg/U5GwPfqhUP",
-      image: discordSvg,
-      description: "Discord",
-      target: "_blank",
-    },
-  ],
-};
-
-onMounted(() => {
-  footer.value.social = social;
-  footer.value.text = license;
-});
+const license: string = 'Todo o conteúdo deste site está publicado sob a licença MIT'
+const logo = {
+  url: 'https://cdngovbr-ds.estaleiro.serpro.gov.br/design-system/images/logo-negative.png',
+  description: 'Logo de exemplo',
+}
 </script>

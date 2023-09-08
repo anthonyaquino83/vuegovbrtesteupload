@@ -1,22 +1,23 @@
-import vue from "@vitejs/plugin-vue";
-import path from "path";
-import { defineConfig } from "vite";
+import vue from '@vitejs/plugin-vue'
+import path from 'path'
+import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  publicDir: 'src/assets',
+  base: '/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/',
   plugins: [
     vue({
       template: {
         compilerOptions: {
-          // Tell Vite that all components starting with "br-" are webcomponents
-          isCustomElement: (tag) => tag.startsWith("br-"),
+          isCustomElement: (tag) => tag.startsWith('br-'),
         },
       },
     }),
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
-});
+})

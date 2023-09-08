@@ -6,6 +6,20 @@ Projeto exemplificando o uso da [biblioteca de Web Components do GovBR-DS](https
 
 Esse projeto usa Vue 3 `<script setup>` SFCs. Confira os [documentos de configuração do script](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) para aprender mais.
 
+## O que é um quickstart?
+
+Um projeto Quickstart é um guia simplificado que mostra como criar um programa ou uma aplicação básica.
+
+## Considerações sobre segurança, qualidade e boas práticas
+
+É importante entender que um projeto Quickstart em software não deve ser usado diretamente em um ambiente de produção. Isso porque esses projetos são simplificados e podem não lidar com todos os desafios do mundo real.
+
+O código do projeto Quickstart pode não lidar com questões avançadas, como segurança, escalabilidade ou gerenciamento de erros. Portanto, antes de implantar o código em um ambiente de produção real, **é crucial revisar**, testar e personalizar o código para atender às necessidades específicas do projeto e garantir que seja robusto e seguro.
+
+Além disso, em projetos Quickstart de software, às vezes são tomadas liberdades na forma como o código é escrito para torná-lo mais fácil de entender. Isso pode significar que algumas boas práticas de programação não são seguidas ou que o código não está otimizado para desempenho máximo. Portanto, é responsabilidade do desenvolvedor adaptar o projeto Quickstart para atender às necessidades e padrões de produção adequados.
+
+Em resumo, um projeto Quickstart em software é **um ponto de partida** útil, mas não deve ser implantado diretamente em um ambiente de produção sem revisão e ajustes adequados. Os desenvolvedores devem lembrar que a simplicidade é frequentemente priorizada em projetos Quickstart em detrimento da complexidade do mundo real e devem personalizar o código para atender às necessidades específicas de seu projeto.
+
 ## Tecnologias
 
 Esse projeto é desenvolvido usando:
@@ -47,7 +61,7 @@ OBS: Para contribuir com o projeto o clone pode não ser a maneira correta. Por 
 
 ## Utilizando os Web Components
 
-Inclua essas duas importações no arquivo _main.ts_.
+Inclua essas duas importações no arquivo *main.ts*.
 
 ```javascript
 import "../node_modules/@govbr-ds/webcomponents/dist/webcomponents.umd.min.js";
@@ -154,7 +168,7 @@ Use nossos canais abaixo para obter tirar suas dúvidas:
 
 -   Web Components [https://gov.br/ds/webcomponents/](https://gov.br/ds/webcomponents/)
 
--   Pelo nosso email <govbr-ds@serpro.gov.br>
+-   Pelo nosso email [govbr-ds@serpro.gov.br](mailto:govbr-ds@serpro.gov.br)
 
 -   Usando nosso canal no discord [https://discord.gg/U5GwPfqhUP](https://discord.gg/U5GwPfqhUP)
 
