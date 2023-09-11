@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## [1.2.0](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/compare/v1.1.0...v1.2.0) (11/09/2023)
+
+
+### ✨ NOVIDADES
+
+* **menu:** adiciona prop para funcionar melhor com spa ([6a767fa](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/commit/6a767fa5402659fac115b1df843ffd367c9e0fae))
+* novo modelo do quickstart ([e7466f9](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/commit/e7466f98ab486d26faa1a9c2a8aa45e113c86e13))
+
+
+### 🪲 CORREÇÕES
+
+* atualiza dependências e corrige erro do build no projeto ([1a26e09](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/commit/1a26e09857065baf3b87a072d148a139c5e80169))
+
 ## [1.1.0](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/compare/v1.0.1...v1.1.0) (14/06/2023)
 
 
