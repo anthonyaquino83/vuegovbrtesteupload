@@ -64,7 +64,7 @@ const toggleMenu = () => {
     id="header"
     :image="image.src"
     :signature="signature"
-    title-link-url="/"
+    title-link-url="/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/"
     :title="title"
   >
     <div slot="headerMenu">
