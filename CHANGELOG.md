@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.2.1](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/compare/v1.2.0...v1.2.1) (12/09/2023)
+
+
+### 🪲 CORREÇÕES
+
+* corrige url de imagens e links ([38ee701](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/commit/38ee7012c9038feb203cd1a889bef9eafd268f0e))
+
 ## [1.2.0](https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/compare/v1.1.0...v1.2.0) (11/09/2023)
 
 
