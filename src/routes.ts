@@ -3,6 +3,7 @@ import Cookiebar from './pages/CookiebarPage.vue'
 import Formulario from './pages/Formulario.vue'
 import Home from './pages/Home.vue'
 import Signin from './pages/Signin.vue'
+import Teste from './pages/Teste.vue'
 
 const routes = [
   {
@@ -35,6 +36,14 @@ const routes = [
     name: 'Cookiebar',
     meta: {
       label: 'Cookiebar',
+    },
+  },
+  {
+    path: '/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/teste',
+    component: Teste,
+    name: 'Teste',
+    meta: {
+      label: 'Teste',
     },
   },
 ]

@@ -46,6 +46,13 @@ const menuItems = ref([
     url: '/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/cookiebar',
     isSpaLinkBehavior: true,
   },
+  {
+    id: 5,
+    icon: 'cookie',
+    name: 'Teste Upload',
+    url: '/wbc/quickstarts/govbr-ds-wbc-quickstart-vue/teste',
+    isSpaLinkBehavior: true,
+  },
 ])
 
 // Função para navegar para uma rota usando Vue Router
